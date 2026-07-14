@@ -9,8 +9,8 @@ pipeline {
         TAG              = 'latest'
         
         // Dynamic Credentials Binding from Jenkins credentials vault
-        DOCKER_CREDS     = credentials('docker-hub-credentials-id') 
-        GKE_KEY          = credentials('gcp-service-account-key-id') 
+        DOCKER_CREDS     = credentials('dockerhub-creds') 
+        GKE_KEY          = credentials('gke-deploy-key') 
         
         FULL_IMAGE_URL   = "${DOCKER_CREDS_USR}/${IMAGE_NAME}:${TAG}"
         HOME             = '/tmp'
